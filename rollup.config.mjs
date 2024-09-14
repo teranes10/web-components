@@ -6,6 +6,7 @@ import summary from 'rollup-plugin-summary';
 import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import del from 'rollup-plugin-delete';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -16,12 +17,10 @@ export default {
         format: 'es',
     },
     plugins: [
-        html({
-            input: './src/index.html',
-        }),
+        del({ targets: 'dist/*', runOnce: true }),
         nodeResolve(),
         typescript(),
-        
+
         ...(isProduction
             ? [
                 minifyHtml.default(),
@@ -36,6 +35,9 @@ export default {
                 summary()
             ]
             : [
+                html({
+                    input: './src/index.html',
+                }),
                 serve({
                     contentBase: ['dist'],
                     port: 3000
