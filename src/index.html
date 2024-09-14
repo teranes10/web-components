@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+
+  <action-button text="Click" onclick="onClick"></action-button>
+
+  <text-field label="Test"></text-field>
+
+  <script type="module" src="./components/index.ts"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+
+    function onClick(event) {
+      console.log('click', event);
+
+    }
+
+
+  </script>
+</body>
+
+</html>
