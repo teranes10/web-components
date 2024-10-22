@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig.app.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": "../",
+        "outDir": "dist",
+        "composite": true,
+        "declaration": true,
+        "noEmit": false,
+        "emitDeclarationOnly": true,
+        "declarationDir": "types",
+    },
+    "include": [
+        "src/**/*",
+        "../../types"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

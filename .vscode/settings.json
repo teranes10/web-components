@@ -3,5 +3,17 @@
     {
       "mode": "auto"
     }
+  ],
+  "cSpell.words": [
+    "Behaviour",
+    "cssnano",
+    "darkmode",
+    "datetime",
+    "flatpickr",
+    "lucide",
+    "popperjs",
+    "reemitted",
+    "tailwindcss",
+    "toastify"
   ]
 }

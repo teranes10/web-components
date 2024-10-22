@@ -1,0 +1,35 @@
+{
+  "name": "@teranes/basic-components",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Basic Components",
+  "main": "./dist/basic-components.umd.js",
+  "types": "./dist/types/basic-components.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/basic-components.mjs",
+      "require": "./dist/basic-components.umd.js",
+      "types": "./dist/types/basic-components.d.ts"
+    },
+    "./styles.css": "./dist/basic-components-style.css"
+  },
+  "scripts": {
+    "build:vue": "vite build --mode production -c vue-vite.config.ts",
+    "build:web-components": "vite build --mode production -c web-components-vite.config.ts",
+    "build": "npm run build:vue && npm run build:web-components"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "Teranes",
+  "license": "ISC",
+  "dependencies": {
+    "@teranes/popper": "^10.0.0",
+    "@teranes/utils": "^9.0.0",
+    "@teranes/vue-composables": "^14.0.0",
+    "lucide-vue-next": "^0.452.0",
+    "tippy.js": "^6.3.7",
+    "vue": "^3.5.12"
+  }
+}

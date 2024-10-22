@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": false,
+    "composite": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "dist/types",
+  },
+  "include": [
+    "packages/**/*.{ts,tsx,vue}",
+    "./types/images.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}
