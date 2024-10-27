@@ -20,7 +20,7 @@ type BaseConfigOptions = {
 }
 
 export function getBaseConfig({ url = import.meta.url, name, fileName, entry, clean = false,
-  customElement = false, dts = false, external = [], globals = {}, formats = ['es', 'umd'] }: BaseConfigOptions) {
+  customElement = false, dts = false, external = [], globals = {}, formats = ['es'] }: BaseConfigOptions) {
   return defineConfig({
     plugins: [
       vue({
@@ -59,12 +59,19 @@ export function getBaseConfig({ url = import.meta.url, name, fileName, entry, cl
             'vue': "Vue",
             ...globals
           },
-          assetFileNames: (assetInfo) => {
-            if (assetInfo?.name?.endsWith('.css')) {
+          interop: 'auto',
+          preserveModules: formats.includes('es'),
+          inlineDynamicImports: !formats.includes('es'),
+          assetFileNames: (info) => {
+            if (info?.name?.endsWith('.css')) {
               return `${fileName}-style.css`;
             }
             return '[name].[ext]';
-          }
+          },
+        },
+        treeshake: {
+          moduleSideEffects: false,
+          propertyReadSideEffects: false,
         },
       },
       lib: {
@@ -79,12 +86,12 @@ export function getBaseConfig({ url = import.meta.url, name, fileName, entry, cl
         formats
       },
       emptyOutDir: clean,
-      // minify: 'terser',
-      // terserOptions: {
-      //   compress: {
-      //     drop_console: true,
-      //   },
-      // },
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
     },
   });
 }

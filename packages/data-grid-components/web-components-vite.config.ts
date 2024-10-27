@@ -6,11 +6,9 @@ export default getBaseConfig({
   fileName: "data-grid-web-components",
   entry: './src/web-components.ts',
   customElement: true,
-  external: ['@teranes/utils', '@teranes/basic-components', '@teranes/form-components'],
+  external: ['@teranes/utils'],
   globals: {
-    '@teranes/utils': 'UTILS',
-    '@teranes/basic-components': 'BasicComponents',
-    '@teranes/form-components': 'FormComponents',
+    '@teranes/utils': 'UTILS'
   },
   formats: ['umd']
 })

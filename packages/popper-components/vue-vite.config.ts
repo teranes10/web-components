@@ -7,10 +7,9 @@ export default getBaseConfig({
   entry: './src/vue.ts',
   clean: true,
   dts: true,
-  external: ['@teranes/utils', '@teranes/vue-composables', '@teranes/basic-components'],
+  external: ['@teranes/utils', '@teranes/vue-composables'],
   globals: {
     '@teranes/utils': 'UTILS',
-    '@teranes/vue-composables': 'VUE_COMPOSABLES',
-    '@teranes/basic-components': 'BasicComponents'
+    '@teranes/vue-composables': 'VUE_COMPOSABLES'
   }
 })

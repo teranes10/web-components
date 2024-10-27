@@ -6,10 +6,9 @@ export default getBaseConfig({
   fileName: "popper-web-components",
   entry: './src/web-components.ts',
   customElement: true,
-  external: ['@teranes/utils', '@teranes/basic-components'],
+  external: ['@teranes/utils'],
   globals: {
-    '@teranes/utils': 'UTILS',
-    '@teranes/basic-components': 'BasicComponents'
+    '@teranes/utils': 'UTILS'
   },
   formats: ['umd']
 })

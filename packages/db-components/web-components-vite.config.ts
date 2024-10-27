@@ -10,5 +10,6 @@ export default getBaseConfig({
   globals: {
     '@teranes/utils': 'UTILS',
     '@teranes/vue-composables': 'VUE_COMPOSABLES'
-  }
+  },
+  formats: ['umd']
 })

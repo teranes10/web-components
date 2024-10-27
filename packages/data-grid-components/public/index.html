@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Grid Components</title>
+    <link rel="stylesheet" href="./data-grid-web-components-style.css" />
+  </head>
+
+  <body style="display: flex; flex-direction: column; gap: 25px">
+    <!-- basic setup -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://www.unpkg.com/@teranes/utils@9.0.0/dist/index.js"></script>
+
+    <script src="./data-grid-web-components.umd.js"></script>
+    <script>
+      const { useFormFieldView } = WebComponents;
+      const dataTable = document.getElementById("data-table");
+
+      dataTable.headers = [
+        {
+          text: "Header 1",
+          value: "header1",
+        },
+        {
+          text: "Header 2",
+          value: "header2",
+        },
+        {
+          text: "FK",
+          component: (x) =>
+            useFormFieldView("switch", {
+              modelValue: x.primaryKey,
+              label: " ",
+            }),
+        },
+      ];
+
+      dataTable.items = [
+        {
+          header1: "Value 1",
+          header2: "Value 2",
+        },
+      ];
+    </script>
+  </body>
+</html>

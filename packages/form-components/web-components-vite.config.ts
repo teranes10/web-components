@@ -6,15 +6,14 @@ export default getBaseConfig({
   fileName: "form-web-components",
   entry: './src/web-components.ts',
   customElement: true,
-  external: ['@teranes/basic-components', '@teranes/popper-components', '@teranes/date', '@teranes/popper', '@teranes/short-unique-id', '@teranes/utils', 'flatpickr'],
+  external: ['@teranes/date', '@teranes/popper', '@teranes/short-unique-id', '@teranes/utils', 'reflect-metadata', 'flatpickr'],
   globals: {
-    '@teranes/basic-components': "BasicComponents",
-    "@teranes/popper-components": "PopperComponents",
     "@teranes/date": "DAY",
     '@teranes/popper': "POPPER",
     '@teranes/short-unique-id': "SHORT_UNIQUE_ID",
     '@teranes/utils': "UTILS",
-    'flatpickr': 'flatpickr'
+    'Reflect': 'reflect-metadata',
+    'flatpickr': 'Flatpickr'
   },
   formats: ['umd']
 })
