@@ -1,6 +1,6 @@
 {
   "name": "@teranes/popper-components",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "type": "module",
   "description": "Popper Components",
   "main": "./dist/popper-components.umd.js",
@@ -26,8 +26,8 @@
   "license": "ISC",
   "dependencies": {
     "@teranes/basic-components": "workspace:*",
-    "@teranes/utils": "^9.0.0",
-    "@teranes/vue-composables": "^14.0.0",
+    "@teranes/utils": "^10.0.0",
+    "@teranes/vue-composables": "^15.0.0",
     "lucide-vue-next": "^0.452.0",
     "toastify-js": "^1.12.0",
     "vue": "^3.5.12"
